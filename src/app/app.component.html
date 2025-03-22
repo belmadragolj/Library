@@ -1,2 +1,5 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+<router-outlet *ngIf="isHandset"></router-outlet>
+<router-outlet *ngIf="isTablet"></router-outlet>
+<router-outlet *ngIf="isWeb"></router-outlet>
+<app-footer></app-footer>
