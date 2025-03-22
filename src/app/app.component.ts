@@ -4,8 +4,10 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: `  <nav>
+      <button type="button" routerLink="/home">Home</button>
+    </nav>
+    <router-outlet></router-outlet>`
 })
 export class AppComponent {
   title = 'Library';
