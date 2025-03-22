@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
-  template: `
-   <nav>
-      <a routerLink="/home">Home</a>
-      <a routerLink="/books">Books</a>
-      <a routerLink="/about">About</a>
-    </nav>
-    <router-outlet>
-     </router-outlet>`
+  imports: [RouterOutlet, HeaderComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Library';
