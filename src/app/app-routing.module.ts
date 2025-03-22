@@ -7,8 +7,16 @@ export const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'books',
+    loadChildren: () => import('./books/books.module').then(m => m.BooksModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+  },
+  {
     path: '',
-    redirectTo: '',  
+    redirectTo: '/home',  
     pathMatch: 'full',
   }
 ];
