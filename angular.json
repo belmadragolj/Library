@@ -21,10 +21,8 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+                "src/favicon.ico",
+                "src/assets"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
@@ -84,11 +82,9 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+           "assets": [
+                "src/favicon.ico",
+                "src/assets"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
@@ -96,11 +92,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "c2949768-d63f-441d-bf17-384a66354b8a"
+    "analytics": "c2949768-d63f-441d-bf17-384a66354b8a",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

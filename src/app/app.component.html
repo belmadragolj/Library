@@ -1,5 +1,13 @@
-<app-header></app-header>
-<router-outlet *ngIf="isHandset"></router-outlet>
-<router-outlet *ngIf="isTablet"></router-outlet>
-<router-outlet *ngIf="isWeb"></router-outlet>
+<div class="app-container">
+    <app-header></app-header>
+    <div class="content" *ngIf="isHandset">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="content" *ngIf="isTablet">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="content"  *ngIf="isWeb">
+        <router-outlet></router-outlet>
+    </div>
 <app-footer></app-footer>
+</div>

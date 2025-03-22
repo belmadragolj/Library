@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { map, Observable } from 'rxjs';
+import { map } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,9 +14,9 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'Library';
-  isHandset: boolean = false;
-  isTablet: boolean = false;
-  isWeb: boolean = false;
+  isHandset = false;
+  isTablet = false;
+  isWeb = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver
