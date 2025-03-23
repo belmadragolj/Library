@@ -7,18 +7,32 @@ import { AboutComponent } from './about/about.component';
 import { BooksComponent } from './books/books.component';
 import { BooksService } from './services/books.service';
 import { MatMenuModule } from '@angular/material/menu';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatOptionModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
     BooksComponent
   ],
   imports: [
     BrowserModule,  
     AppRoutingModule,
-    MatMenuModule,  
+    MatMenuModule, 
+    FormsModule, 
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatOptionModule, 
+    MatIconModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent] 

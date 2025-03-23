@@ -27,7 +27,6 @@ html, body {
   
   .content {
     flex: 1;
-    display: flex;
     padding: 76px;
     margin-top: 30px; 
   }

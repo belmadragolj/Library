@@ -1,1 +1,24 @@
-<p>about works!</p>
+<div class="container">
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        (input)="filterBooks()"
+        placeholder="Search books..."
+        class="search-input"
+      />
+    </div>
+
+    <div class="toggle-container">
+      <button class="toggle-btn">Toggle</button>
+    </div>
+  </div>
+
+  <div *ngIf="filteredBooks.length > 0" class="books-grid">
+    <div *ngFor="let book of filteredBooks" class="book-card">
+      <img class="cover" [src]="book.coverImage" alt="{{ book.title }}" />
+      <h3>{{ book.title }}</h3>
+      <p>{{ book.author }}</p>
+    </div>
+  </div>
+  
