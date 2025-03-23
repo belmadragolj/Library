@@ -108,4 +108,10 @@ export class BooksService {
     this.books = this.books.map(book => (book.id === updatedBook.id ? updatedBook : book));
     this.booksSubject.next(this.books); 
   }
+
+  addBook(newBook: Book) {
+    newBook.id = this.books.length + 1;
+    this.books = [...this.books, newBook];
+    this.booksSubject.next(this.books); 
+  }
 }

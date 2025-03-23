@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BooksComponent } from './books/books.component';
 import { BooksService } from './services/books.service';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BooksService } from './services/books.service';
   ],
   imports: [
     BrowserModule,  
-    AppRoutingModule,  
+    AppRoutingModule,
+    MatMenuModule,  
   ],
   providers: [BooksService],
   bootstrap: [AppComponent] 

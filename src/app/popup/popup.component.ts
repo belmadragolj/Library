@@ -26,19 +26,21 @@ import { Book } from '../services/books.service';
 })
 export class PopupComponent {
   bookForm: FormGroup;
+  isNewBook = false;
 
   constructor(
     private dialogRef: MatDialogRef<PopupComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Book,
     private formBuilder: FormBuilder
   ) {
+    this.isNewBook = !data;
     this.bookForm = this.formBuilder.group({
-      id: [data.id],
-      title: [data.title, Validators.required],
-      author: [data.author, Validators.required],
-      genre: [data.genre, Validators.required],
-      coverImage: [data.coverImage],
-      description: [data.description]
+      id: [data?.id || null],
+      title: [data?.title || '', Validators.required],
+      author: [data?.author || '', Validators.required],
+      genre: [data?.genre || '', Validators.required],
+      description: [data?.description || ''],
+      coverImage: [data?.coverImage || 'assets/images/crime.jfif']
     });
   }
 

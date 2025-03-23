@@ -5,10 +5,11 @@ import { FooterComponent } from '../footer/footer.component';
 import { PopupComponent } from '../popup/popup.component';
 import { MatDialog } from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-books',
-  imports: [CommonModule, FooterComponent, MatIconModule],
+  imports: [CommonModule, FooterComponent, MatIconModule, MatMenuModule],
   templateUrl: './books.component.html',
   styleUrl: './books.component.css'
 })
@@ -34,6 +35,10 @@ export class BooksComponent {
         this.booksService.updateBook(updatedBook);
       }
     });
+}
+
+deleteBook(bookId: number) {
+  this.books = this.books.filter(book => book.id !== bookId);
 }
 }
 

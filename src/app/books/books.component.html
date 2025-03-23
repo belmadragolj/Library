@@ -1,9 +1,21 @@
 <div class="books-grid">
-    <div *ngFor="let book of books" class="book-card">
-        <img class="icon" src="assets/icons/more.webp" alt="Info Icon" (click)="openPopup(book)">
-      <img class="cover" [src]="book.coverImage" alt="{{ book.title }}" />
-      <h3>{{ book.title }}</h3>
-      <p>{{ book.author }}</p>
+  <div *ngFor="let book of books" class="book-card">
+    <div class="icon-container" matTooltip="Options" [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
     </div>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openPopup(book)">
+        <mat-icon>info</mat-icon> More Info
+      </button>
+      <button mat-menu-item (click)="deleteBook(book.id)">
+        <mat-icon>delete</mat-icon> Delete
+      </button>
+    </mat-menu>
+
+    <img class="cover" [src]="book.coverImage" alt="{{ book.title }}" />
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.author }}</p>
   </div>
-  <app-footer></app-footer>
+</div>
+<app-footer></app-footer>
