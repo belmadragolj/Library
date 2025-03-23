@@ -4,9 +4,11 @@ body {
     align-items: center;
     justify-content: flex-start; 
     padding-left: 15%;
+    background: transparent;
   }
-  
+
   .home-container {
+    background: transparent;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -14,12 +16,8 @@ body {
   }
   
   .card {
-    background: #E0EDF1; 
-    padding: 80px;
     border-radius: 12px;
-    text-align: center;
-    width: 280px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 340px;
     transition: transform 0.3s ease;
   }
   
@@ -28,13 +26,13 @@ body {
   }
   
   h1 {
-    font-size: 24px;
-    color: #5A3E2B; 
+    font-size: 50px;
+    color: black; 
   }
   
   p {
-    font-size: 16px;
-    color: #333;
+    font-size: 18px;
+    color: black;
   }
   
   .btn {
@@ -46,6 +44,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   }
   
   .btn:hover {

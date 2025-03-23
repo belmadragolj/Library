@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, Renderer2 } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -17,8 +17,10 @@ export class AppComponent {
   isHandset = false;
   isTablet = false;
   isWeb = false;
+  currentRoute: string = '';
+  isCurrentRouteHome: boolean = false;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router, private renderer: Renderer2) {
     this.breakpointObserver
       .observe([Breakpoints.Handset])
       .pipe(
@@ -61,4 +63,18 @@ export class AppComponent {
       )
       .subscribe();
   }
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isCurrentRouteHome = event.urlAfterRedirects === '/home';
+
+        if (this.isCurrentRouteHome) {
+          this.renderer.removeClass(document.body, 'no-background');
+        } else {
+          this.renderer.addClass(document.body, 'no-background');
+        }
+      }
+    })
+}
 }

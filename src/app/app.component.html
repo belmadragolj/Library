@@ -1,13 +1,7 @@
-<div class="app-container">
+<div class="app-container" [ngClass]="{ 'home-background': isCurrentRouteHome }">
     <app-header></app-header>
-    <div class="content" *ngIf="isHandset">
-        <router-outlet></router-outlet>
+    <div class="content" *ngIf="isHandset || isTablet || isWeb">
+      <router-outlet></router-outlet>
     </div>
-    <div class="content" *ngIf="isTablet">
-        <router-outlet></router-outlet>
-    </div>
-    <div class="content"  *ngIf="isWeb">
-        <router-outlet></router-outlet>
-    </div>
-<app-footer></app-footer>
-</div>
+  </div>
+  
