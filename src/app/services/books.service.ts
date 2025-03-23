@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface Book {
   id: number;
@@ -100,7 +100,12 @@ export class BooksService {
   private booksSubject = new BehaviorSubject<Book[]>(this.books);
   books$ = this.booksSubject.asObservable();
 
-  getBooks() {
+  getBooks(): Observable<Book[]> {
     return this.books$;
+  }
+
+  updateBook(updatedBook: Book) {
+    this.books = this.books.map(book => (book.id === updatedBook.id ? updatedBook : book));
+    this.booksSubject.next(this.books); 
   }
 }

@@ -24,10 +24,16 @@ export class BooksComponent {
   }
 
   openPopup(book: Book) {
-    this.dialog.open(PopupComponent, {
+    const dialogPopup = this.dialog.open(PopupComponent, {
       width: '500px',
       data: book
     });
-  }
+
+    dialogPopup.afterClosed().subscribe(updatedBook => {
+      if (updatedBook) {
+        this.booksService.updateBook(updatedBook);
+      }
+    });
+}
 }
 
