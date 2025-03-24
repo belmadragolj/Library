@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Book, BooksService } from '../services/books.service';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-about',
@@ -15,7 +16,8 @@ export class AboutComponent implements OnInit {
   filteredBooks: Book[] = [];
   searchQuery: string = '';
 
-  constructor(private booksService: BooksService) {}
+  constructor(private booksService: BooksService, private themeService: ThemeService) {
+  }
 
   ngOnInit() {
     this.booksService.getBooks().subscribe((books) => {
@@ -34,5 +36,9 @@ export class AboutComponent implements OnInit {
       book.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
       book.author.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }

@@ -4,22 +4,27 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { PopupComponent } from '../popup/popup.component';
 import { MatDialog } from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-books',
   imports: [CommonModule, FooterComponent, MatIconModule, MatMenuModule],
   templateUrl: './books.component.html',
-  styleUrl: './books.component.css'
+  styleUrl: './books.component.css',
 })
 export class BooksComponent {
   books: Book[] = [];
 
-  constructor(private booksService: BooksService, private dialog: MatDialog) {}
+  constructor(
+    private booksService: BooksService,
+    private dialog: MatDialog,
+    private themeService: ThemeService
+  ) {}
 
   ngOnInit() {
-    this.booksService.getBooks().subscribe(books => {
+    this.booksService.getBooks().subscribe((books) => {
       this.books = books;
     });
   }
@@ -27,18 +32,20 @@ export class BooksComponent {
   openPopup(book: Book) {
     const dialogPopup = this.dialog.open(PopupComponent, {
       width: '500px',
-      data: book
+      data: book,
     });
 
-    dialogPopup.afterClosed().subscribe(updatedBook => {
+    dialogPopup.afterClosed().subscribe((updatedBook) => {
       if (updatedBook) {
         this.booksService.updateBook(updatedBook);
       }
     });
-}
+  }
 
-deleteBook(bookId: number) {
-  this.books = this.books.filter(book => book.id !== bookId);
+  deleteBook(bookId: number) {
+    this.books = this.books.filter((book) => book.id !== bookId);
+  }
+  isDarkMode(): boolean {
+    return this.themeService.isDark();
+  }
 }
-}
-
