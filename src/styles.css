@@ -2,8 +2,11 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-image: url('assets/images/background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: inherit;
   height: 100%;
- 
 }
 
 .no-background {
@@ -16,18 +19,15 @@ body {
   --box-bg: #fff;
   --border-color: #ccc;
   --input-bg: #fff;
+  --fog-bg: rgba(255, 255, 255, 0.8);
 }
 
 .dark-mode {
-  background-image: none !important;
-  background-color: #121212 !important;
   --bg-color: #121212;
   --text-color: #f5f5f5;
   --box-bg: #333;
   --border-color: #666;
   --input-bg: #444;
+  --fog-bg: rgba(34, 34, 34, 0.8);
 }
 
-.dark-mode.no-background {
-  background: var(--bg-color) !important;
-}
