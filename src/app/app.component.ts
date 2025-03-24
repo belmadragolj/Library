@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, CommonModule],
+  imports: [RouterOutlet, HeaderComponent, CommonModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -72,7 +72,6 @@ export class AppComponent {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (typeof document !== 'undefined') {
-          // If not on home, add no-background; else remove it
           if (event.urlAfterRedirects !== '/home') {
             this.renderer.addClass(document.body, 'no-background');
           } else {

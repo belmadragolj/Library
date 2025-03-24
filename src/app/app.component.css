@@ -15,24 +15,36 @@ html, body {
   
   app-header {
     background: transparent;
-    color: white;
+    color:  #257da2;
     text-align: center;
     padding: 10px;
     font-size: 20px;
-    position: fixed;
-    width: 100%;
     top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
+  app-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: transparent;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    bottom: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    background: #C8421C;
+  }
+
   .dark-mode app-header {
     background-color: #333 !important;
-    color: #f5f5f5 !important;
+    color: white !important;
   }
   
   .content {
     flex: 1;
     padding: 76px;
-    margin-top: 30px; 
+    margin-top: -55px;
   }
   

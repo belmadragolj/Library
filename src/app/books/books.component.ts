@@ -10,7 +10,7 @@ import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-books',
-  imports: [CommonModule, FooterComponent, MatIconModule, MatMenuModule],
+  imports: [CommonModule, MatIconModule, MatMenuModule],
   templateUrl: './books.component.html',
   styleUrl: './books.component.css',
 })
