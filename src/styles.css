@@ -1,15 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
+html,
 body {
-    margin: 0;
-    background-image: url('assets/images/background-image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+ 
 }
 
 .no-background {
-    background: none !important;
+  background: none !important;
+}
+
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #222;
+  --box-bg: #fff;
+  --border-color: #ccc;
+  --input-bg: #fff;
+}
+
+.dark-mode {
+  background-image: none !important;
+  background-color: #121212 !important;
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --box-bg: #333;
+  --border-color: #666;
+  --input-bg: #444;
+}
+
+.dark-mode.no-background {
+  background: var(--bg-color) !important;
 }
