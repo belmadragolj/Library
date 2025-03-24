@@ -1,4 +1,5 @@
-<div class="container">
+<div class="main-containter">
+    <div class="container">
     <div class="search-container">
       <input
         type="text"
@@ -10,8 +11,11 @@
     </div>
 
     <div class="toggle-container">
-      <button class="toggle-btn" (click)="toggleTheme()">Toggle</button>
-    </div>
+        <button class="toggle-btn" (click)="toggleTheme()">
+            <span class="toggle-icon" *ngIf="!isDarkMode">🌙</span>
+            <span class="toggle-icon" *ngIf="isDarkMode">☀️</span>
+        </button>
+      </div>
   </div>
 
   <div *ngIf="filteredBooks.length > 0" class="books-grid">
@@ -21,4 +25,5 @@
       <p>{{ book.author }}</p>
     </div>
   </div>
+</div>
   

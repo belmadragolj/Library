@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Book, BooksService } from '../services/books.service';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from '../footer/footer.component';
 import { PopupComponent } from '../popup/popup.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';

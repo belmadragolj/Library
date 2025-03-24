@@ -15,6 +15,7 @@ export class AboutComponent implements OnInit {
   books: Book[] = [];
   filteredBooks: Book[] = [];
   searchQuery: string = '';
+  isDarkMode: boolean = false;
 
   constructor(private booksService: BooksService, private themeService: ThemeService) {
   }
@@ -24,6 +25,7 @@ export class AboutComponent implements OnInit {
       this.books = books;
       this.filteredBooks = books; 
     });
+    this.isDarkMode = this.themeService.isDark();
   }
 
   filterBooks() {
@@ -40,5 +42,6 @@ export class AboutComponent implements OnInit {
 
   toggleTheme() {
     this.themeService.toggleTheme();
+    this.isDarkMode = this.themeService.isDark();
   }
 }

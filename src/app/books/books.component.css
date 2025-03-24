@@ -4,7 +4,9 @@
   align-items: center;
   padding: 20px;
   min-height: 100vh;
-  background: var(--bg-color);
+  background: var(--fog-bg);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
 }
 
 .books-grid {
@@ -22,6 +24,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative; 
+  color:  var(--text-color);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
