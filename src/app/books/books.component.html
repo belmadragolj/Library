@@ -6,10 +6,10 @@
       </div>
 
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="openPopup(book)">
+        <button data-cy="info-button" mat-menu-item (click)="openPopup(book)">
           <mat-icon>info</mat-icon> More Info
         </button>
-        <button mat-menu-item (click)="deleteBook(book.id)">
+        <button  data-cy="delete-button" mat-menu-item (click)="deleteBook(book.id)">
           <mat-icon>delete</mat-icon> Delete
         </button>
       </mat-menu>
