@@ -8,7 +8,7 @@ import { BooksComponent } from './books/books.component';
 import { BooksService } from './services/books.service';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -32,7 +32,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatAutocompleteModule,
     MatOptionModule, 
-    MatIconModule
+    MatIconModule,
+    NoopAnimationsModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent] 

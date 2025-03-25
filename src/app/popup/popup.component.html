@@ -1,32 +1,34 @@
-<h2 mat-dialog-title>Edit Book</h2>
-
-<div mat-dialog-content>
-  <form [formGroup]="bookForm">
-    <div class="firstInfo">
-    <mat-form-field appearance="fill">
-      <mat-label>Title</mat-label>
-      <input matInput formControlName="title">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Author</mat-label>
-      <input matInput formControlName="author">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Genre</mat-label>
-      <input matInput formControlName="genre">
-    </mat-form-field>
+<div data-cy="popup-dialog">
+    <h2 mat-dialog-title>Edit Book</h2>
+    <div mat-dialog-content>
+      <form [formGroup]="bookForm">
+        <div class="firstInfo">
+          <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+          </mat-form-field>
   
-    <mat-form-field appearance="fill">
-      <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description" rows="3"></textarea>
-    </mat-form-field>
-</div>
-  </form>
-</div>
-
-<div mat-dialog-actions>
-  <button mat-button (click)="close()">Cancel</button>
-  <button mat-button color="primary" (click)="save()">Save</button>
-</div>
+          <mat-form-field appearance="fill">
+            <mat-label>Author</mat-label>
+            <input matInput formControlName="author">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Genre</mat-label>
+            <input matInput formControlName="genre">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" rows="3"></textarea>
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+  
+    <div mat-dialog-actions>
+      <button mat-button (click)="close()">Cancel</button>
+      <button mat-button color="primary" (click)="save()">Save</button>
+    </div>
+  </div>
+  
